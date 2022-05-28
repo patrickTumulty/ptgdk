@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FirstPersonCameraController : MonoBehaviour
+public class FPCameraController : MonoBehaviour
 {
     [SerializeField] private Camera camera;
     [SerializeField] private Transform transform;

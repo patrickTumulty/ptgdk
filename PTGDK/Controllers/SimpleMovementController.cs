@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovementController : MonoBehaviour
+public class SimpleMovementController : MonoBehaviour
 {
     [SerializeField] private Transform groundCheckTransform;
     [SerializeField] private Transform transform;
