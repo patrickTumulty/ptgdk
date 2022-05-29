@@ -1,6 +1,6 @@
 namespace PTGDK.Utility
 {
-    public static class ConversionUtility
+    public static class ConversionUtils
     {
         public static double InchesToMeters(double inches)
         {

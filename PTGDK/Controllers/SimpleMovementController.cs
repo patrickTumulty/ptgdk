@@ -14,6 +14,7 @@ public class SimpleMovementController : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 3f;
     [SerializeField] private float groundDetectDistance = 0.4f;
+    [SerializeField] private bool allowMidAirCorrections = false;
     
     private InputAction moveInputAction;
     private InputAction jumpInputAction;
@@ -57,8 +58,11 @@ public class SimpleMovementController : MonoBehaviour
         Vector2 position = moveInputAction.ReadValue<Vector2>();
 
         Vector3 move = (transform.right * position.x) + (transform.forward * position.y);
-        
-        characterController.Move(move * speed * Time.deltaTime);
+
+        if (isGrounded)
+        {
+           characterController.Move(move * speed * Time.deltaTime); 
+        }
 
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);

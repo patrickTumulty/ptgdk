@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PTGDK.Utility
 {
-    public static class StringUtility
+    public static class StringUtils
     {
         public static bool EqualsCaseInsensitive(string s1, string s2)
         {

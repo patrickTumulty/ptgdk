@@ -3,7 +3,7 @@ using System;
 
 namespace PTGDK.Utility
 {
-    public static class NumberUtility
+    public static class NumberUtils
     {
         /// <summary>
         /// Compare two doubles to check for equality within a certain amount of precision.

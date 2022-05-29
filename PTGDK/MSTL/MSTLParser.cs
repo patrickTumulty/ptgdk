@@ -152,7 +152,7 @@ namespace PTGDK.MSTL
         {
             IList<String> blockList = block.Split('\n').ToList();
             string dataType = blockList[0].Split(',')[1].Replace(";", "");
-            if (!StringUtility.EqualsCaseInsensitive(dataType, targetDataType))
+            if (!StringUtils.EqualsCaseInsensitive(dataType, targetDataType))
             {
                 throw new ArgumentException(String.Format("Method {0} can not be used to parse MSTL block of type {1}", method, targetDataType));
             }

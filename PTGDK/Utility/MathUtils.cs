@@ -1,6 +1,6 @@
 namespace PTGDK.Utility
 {
-    public static class MathUtility
+    public static class MathUtils
     {
        
         
