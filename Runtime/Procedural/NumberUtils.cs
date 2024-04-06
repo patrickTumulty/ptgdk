@@ -1,4 +1,6 @@
 
+using System;
+
 public class NumberUtils
 {
     public static bool WithinRangeInclusive(int value, int r1, int r2)

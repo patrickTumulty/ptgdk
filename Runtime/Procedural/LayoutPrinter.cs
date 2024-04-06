@@ -1,4 +1,8 @@
+using System;
+using System.Collections.Generic;
 using Grid;
+
+#nullable enable
 
 namespace CSharpSandbox
 {
@@ -39,11 +43,10 @@ namespace CSharpSandbox
 
         public GridPrinter(GridNode root)
         {
-            AreaBounds ab = GridNodeUtils.GetAreaBounds(root);
-            Console.WriteLine(ab);
+            (int xMin, int xMax, int yMin, int yMax) = GridNodeUtils.GetAreaBounds(root);
 
-            int width = ((ab.MaxX - ab.MinX) * 2) + 1;
-            int height = ab.MaxY - ab.MinY + 1;
+            int width = ((xMax - xMin) * 2) + 1;
+            int height = yMax - yMin + 1;
 
             Console.WriteLine($"width={width}, height={height}");
 

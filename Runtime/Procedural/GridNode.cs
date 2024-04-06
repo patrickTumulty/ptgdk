@@ -1,4 +1,6 @@
 
+#nullable enable
+
 namespace Grid
 {
     public class GridNode

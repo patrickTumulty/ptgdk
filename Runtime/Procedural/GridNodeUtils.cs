@@ -1,27 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+#nullable enable
 
 namespace Grid
 {
-    public struct AreaBounds
-    {
-        public int MinX { get; set; }
-        public int MaxX { get; set; }
-        public int MinY { get; set; }
-        public int MaxY { get; set; }
-
-        public AreaBounds()
-        {
-            MinX = 0;
-            MaxX = 0;
-            MinY = 0;
-            MaxY = 0;
-        }
-
-        public override readonly string ToString()
-        {
-            return $"minX={MinX}, maxX={MaxX}, minY={MinY}, maxY={MaxY}";
-        }
-    }
-
     public enum Axis
     {
         X,
@@ -328,20 +312,20 @@ namespace Grid
             };
         }
 
-        public static AreaBounds GetAreaBounds(GridNode root)
+        public static (int, int, int, int) GetAreaBounds(GridNode root)
         {
-            AreaBounds areaBounds = new();
+            int xMin = int.MaxValue, xMax = int.MinValue, yMin = int.MaxValue, yMax = int.MinValue;
             HashSet<int> visited = new();
 
             TraverseBF(visited, root, (node) =>
             {
-                areaBounds.MinX = Math.Min(areaBounds.MinX, node.X);
-                areaBounds.MaxX = Math.Max(areaBounds.MaxX, node.X);
-                areaBounds.MinY = Math.Min(areaBounds.MinY, node.Y);
-                areaBounds.MaxY = Math.Max(areaBounds.MaxY, node.Y);
+                xMin = Math.Min(xMin, node.X);
+                xMax = Math.Max(xMax, node.X);
+                yMin = Math.Min(yMin, node.Y);
+                yMax = Math.Max(yMax, node.Y);
             });
 
-            return areaBounds;
+            return (xMin, xMax, yMin, yMax);
         }
 
         public static void TraverseBF(GridNode? node, Action<GridNode> action)

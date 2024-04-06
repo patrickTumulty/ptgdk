@@ -1,5 +1,9 @@
 
+using System;
+using System.Collections.Generic;
 using Grid;
+
+#nullable enable
 
 namespace Procedural
 {
@@ -13,20 +17,14 @@ namespace Procedural
             GridNodeUtils.AddRectangle(root, 10, 10);
             GridNodeUtils.AddRectangle(root, 5, 15);
 
-
-
-
             PrintGraph(new(), root);
 
             return root;
         }
 
-
-
         private static GridNode RandomlyGenerateSomeRectangles()
         {
             Random random = new();
-
 
             GridNode root = new(0, 0);
 
