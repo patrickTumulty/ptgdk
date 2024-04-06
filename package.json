@@ -1,0 +1,12 @@
+{
+    "name": "com.ptumulty.ptgdk",
+    "version": "1.0.0",
+    "displayName": "PTGDK",
+    "description": "General purpose code library",
+    "unity": "2022.3.21",
+    "author": {
+        "name": "Patrick Tumulty",
+        "email": "ptumulty1@gmail.com",
+        "url": ""
+    }
+}
